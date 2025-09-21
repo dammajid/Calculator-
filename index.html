@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <!-- Link ke file CSS eksternal -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- 
+    ==================================================
+    STRUKTUR HTML KALKULATOR
+    ==================================================
+    File ini berisi struktur HTML untuk kalkulator:
+    - Container utama dengan class calculator
+    - Header dengan judul dan subtitle
+    - Display untuk menampilkan angka
+    - Grid tombol untuk input
+    ================================================== 
+    -->
+    
+    <div class="calculator">
+        <!-- Header kalkulator -->
+        <div class="calculator-header">
+            <h1 class="calculator-title">Calculator</h1>
+            <p class="calculator-subtitle">Advanced Calculator</p>
+        </div>
+
+        <!-- Display untuk menampilkan angka dan hasil -->
+        <div class="display" id="display">0</div>
+
+        <!-- Grid tombol kalkulator -->
+        <div class="buttons">
+            <!-- Baris 1: Clear, operasi bagi -->
+            <button class="btn btn-clear" onclick="clearDisplay()">C</button>
+            <button class="btn btn-clear" onclick="deleteLast()">⌫</button>
+            <button class="btn btn-operator" onclick="inputOperator('/')" data-operator="/">÷</button>
+            <button class="btn btn-operator" onclick="inputOperator('*')" data-operator="*">×</button>
+
+            <!-- Baris 2: Angka 7,8,9 dan minus -->
+            <button class="btn btn-number" onclick="inputNumber('7')">7</button>
+            <button class="btn btn-number" onclick="inputNumber('8')">8</button>
+            <button class="btn btn-number" onclick="inputNumber('9')">9</button>
+            <button class="btn btn-operator" onclick="inputOperator('-')" data-operator="-">-</button>
+
+            <!-- Baris 3: Angka 4,5,6 dan plus -->
+            <button class="btn btn-number" onclick="inputNumber('4')">4</button>
+            <button class="btn btn-number" onclick="inputNumber('5')">5</button>
+            <button class="btn btn-number" onclick="inputNumber('6')">6</button>
+            <button class="btn btn-operator" onclick="inputOperator('+')" data-operator="+">+</button>
+
+            <!-- Baris 4: Angka 1,2,3 dan equals -->
+            <button class="btn btn-number" onclick="inputNumber('1')">1</button>
+            <button class="btn btn-number" onclick="inputNumber('2')">2</button>
+            <button class="btn btn-number" onclick="inputNumber('3')">3</button>
+            <button class="btn btn-equals" onclick="calculate()" rowspan="2">=</button>
+
+            <!-- Baris 5: Angka 0, decimal -->
+            <button class="btn btn-number" onclick="inputNumber('0')" style="grid-column: span 2;">0</button>
+            <button class="btn btn-decimal" onclick="inputDecimal()">.</button>
+        </div>
+    </div>
+
+    <!-- Link ke file JavaScript eksternal -->
+    <script src="js/calculator.js"></script>
+</body>
+</html>
